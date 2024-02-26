@@ -14,6 +14,7 @@ with open('game.txt', encoding='utf8') as file:
         new_rows.append(row)
 
 with open('game_new.csv', 'w', encoding='utf8', newline='') as file:
-    writer = csv.DictWriter(file, delimiter='$', quotechar='"', fieldnames=fieldnames)
+    # Я не уверен, следует ли оставить разделитель "$", но я заменил на ","
+    writer = csv.DictWriter(file, delimiter=',', quotechar='"', fieldnames=fieldnames)
     writer.writeheader()
     writer.writerows(new_rows)
