@@ -25,7 +25,7 @@ def generate_hash(s: str):
     hash = 0
 
     for char in s:
-        hash += (hash + alp[char] * p ** p_pow) % m
+        hash = (hash + alp[char] * p ** p_pow) % m
         p_pow += 1
 
     return hash
