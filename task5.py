@@ -53,6 +53,8 @@ for error in reader:
 
 # Записываем в новый файл с хешом
 with open('game_with_hash.csv', 'w', newline='', encoding='utf8') as file:
-    writer = csv.DictWriter(file, fieldnames=['hash', 'GameName', 'characters', 'nameError', 'date'])
+    # Я вновь до конца не знаю, следует ли менять разделитель. Но поменял его на запятую
+    writer = csv.DictWriter(file, quotechar='"', delimiter=',',
+                            fieldnames=['hash', 'GameName', 'characters', 'nameError', 'date'])
     writer.writeheader()
     writer.writerows(reader)
