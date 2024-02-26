@@ -1,7 +1,6 @@
 import csv
 
 
-
 def binary_search(games, character):
     '''
     Реализация бинарного поиска персонажа по играм.
@@ -23,7 +22,7 @@ def binary_search(games, character):
         return binary_search(games[0:middle], character)
 
     # Персонаж во второй половине массива
-    return binary_search(games[middle+1:length], character)
+    return binary_search(games[middle + 1:length], character)
 
 
 with open('game.txt', encoding='utf8', newline='') as file:
@@ -53,5 +52,3 @@ while (character := input('Введите имя персонажа:\t')) != 'ga
             break
         print(res['GameName'])
         games_copy = list(filter(lambda game: game['GameName'] != res['GameName'], games_copy))
-
-

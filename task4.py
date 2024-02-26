@@ -5,7 +5,7 @@ def count_games(errors):
     '''
     Ф-ция, считающая количество ошибок для каждой игры
     :param errors: ошибки с одинаковыми играми, которые нужно посчитать
-    :return:
+    :return: ошибки с новым полем "counter", в котором записано кол-во ошибок в этой игре
     '''
 
     # Создаем словарь где каждой игре соответсвует ее кол-во ошибок
@@ -19,6 +19,7 @@ def count_games(errors):
         error['counter'] = names[error['GameName']]
 
     return errors
+
 
 # Считываем файл через csv.DictReader
 with open('game.txt', encoding='utf8') as file:
